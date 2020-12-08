@@ -24,7 +24,7 @@ class RegisterApiView(APIView):
         if serializer.is_valid(raise_exception=True):
             user = serializer.save()
             if user:
-                send_mail('Код для активации!',f"Активационный код: {user.activation_code}", 'mamashev.nurgazy@gmail.com', [user.email])
+                send_mail('Код для активации!',f"Активационный код: {user.activation_code}", 'ujumakadyrov2@gmail.com', [user.email])
                 return Response(
                     serializer.data, status=status.HTTP_201_CREATED
                 )
